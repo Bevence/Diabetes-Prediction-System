@@ -60,7 +60,7 @@ def export_csv(request):
     for data in Datas.objects.all().values_list('name','age','gender','polyuria','polydipsia','weight_loss','weakness','polyphagia','genital_thrush','visual_blurring','irritability','partial_paresis','muscle_stiffness','alopecia','result_random_forest','result_decision_tree','result_naive_bayes','result_knn','result_logistic_regression','result_svm'):
         writer.writerow(data)
 
-    response['Content-Disposition'] = 'attachment; filename="users_dat.csv"'
+    response['Content-Disposition'] = 'attachment; filename="users_data.csv"'
     return response
 
 
