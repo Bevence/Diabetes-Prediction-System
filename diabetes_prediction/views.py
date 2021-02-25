@@ -14,7 +14,7 @@ def send_dictionary(request):
   
 
     
-    filename='/media/bikesh/New Volume/6th sem mini project/Diabetes-Prediction/predictor/algorithms/results/'
+    filename='predictor/algorithms/results/'
    
     with open (filename+'accuracy.txt', 'r',encoding='utf-8') as file:
         accuracy= list(map(float, file.readlines()))
