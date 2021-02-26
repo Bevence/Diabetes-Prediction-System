@@ -55,9 +55,9 @@ def export_csv(request):
     response = HttpResponse(content_type='text/csv')  
 
     writer = csv.writer(response)   
-    writer.writerow(['Name','Age','Gender','Polyuria','Polydipsia','Sudden weight loss','Weakness','Polyphagia','Genital thrush','visual blurring','Irritability','partial paresis','muscle stiffness','Alopecia','Random Forest','Decision Tree','Naive Bayes','KNN','Logistic Regression','SVM'])
+    writer.writerow(['Age','Gender','Polyuria','Polydipsia','Sudden weight loss','Weakness','Polyphagia','Genital thrush','visual blurring','Irritability','partial paresis','muscle stiffness','Alopecia','Random Forest','Decision Tree','Naive Bayes','KNN','Logistic Regression','SVM'])
 
-    for data in Datas.objects.all().values_list('name','age','gender','polyuria','polydipsia','weight_loss','weakness','polyphagia','genital_thrush','visual_blurring','irritability','partial_paresis','muscle_stiffness','alopecia','result_random_forest','result_decision_tree','result_naive_bayes','result_knn','result_logistic_regression','result_svm'):
+    for data in Datas.objects.all().values_list('age','gender','polyuria','polydipsia','weight_loss','weakness','polyphagia','genital_thrush','visual_blurring','irritability','partial_paresis','muscle_stiffness','alopecia','result_random_forest','result_decision_tree','result_naive_bayes','result_knn','result_logistic_regression','result_svm'):
         writer.writerow(data)
 
     response['Content-Disposition'] = 'attachment; filename="users_data.csv"'
